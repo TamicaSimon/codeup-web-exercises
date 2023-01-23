@@ -71,4 +71,4 @@ if(premiummembers === 1) {
 else if(freemembershipstatus === 1) {
     alert("Thank you for shopping with us today and please consider upgrading to a paid/premium membership")
 }
-else {"Unfortunately the offer has expired.  Please try back later."};
+else {"Unfortunately the offer has expired. Please try back later."};
