@@ -8,7 +8,7 @@ alert("Welcome to my website");
 //
 // "Great, blue is my favorite color too!"
 var userInput = prompt ('What is your favorite color?');
-console.log(userInput + 'is my favorite color too');
+console.log(userInput + ' is my favorite color too');
 
 //Complete exercise 3 from the previous lesson, but write your code in the external.js file instead of in the console.
 //
