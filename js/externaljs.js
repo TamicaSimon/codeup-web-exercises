@@ -1,5 +1,5 @@
 "use strict";
-console.log('Hello from JavaScript');
+console.log('Hello from external JavaScript');
 
 alert("Welcome to my website");
 //Use a prompt to ask for the user's favorite color. Use the user's response to alert a message that says that the color entered is your favorite color too.

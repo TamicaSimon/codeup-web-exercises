@@ -74,11 +74,20 @@
         }
     }
 
-    shoppers.forEach((function (guest) {
-        console.log(guest.name + ", " + guest.amount + ", " + hebDiscount + ", " + finalPrice(guest.amount));
-    }));
-
-
+    shoppers.forEach( function(shoppers) {
+        if (shoppers.amount > 200) {
+            alert("Greetings " + shoppers.name + ". You've spent $" + shoppers.amount + " and earned a 12% discount!");
+            let savings = shoppers.amount * 0.12;
+            let finalTotal = shoppers.amount.toFixed(2) - savings;
+            console.log(shoppers.name + " originally spent $" + shoppers.amount.toFixed(2) + ".");
+            console.log(shoppers.name + "saved and has a new final total of $" + finalTotal.toFixed(2) + ".");
+            alert("Congrats! Your new total is $" + finalTotal.toFixed(2) + ".");
+        } else {
+            alert("Unfortunately, " + shoppers.name + " you spent $" + shoppers.amount.toFixed(2) + " and do not qualify for a discount so your total is $" + shoppers.amount.toFixed(2));
+            console.log(shoppers.name + " does not qualify for the discount.");
+            console.log(shoppers.name + "'s total is $" + shoppers.amount.toFixed(2) + ".");
+        }
+    })
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author

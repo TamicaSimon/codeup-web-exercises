@@ -31,10 +31,6 @@ var helloMessage = sayHello("Rachel");
 console.log(helloMessage);
 
 
-// var helloMessage = sayHello( name: "Tamica Simon"):
-//     console.Log(helLoMessage);
-// var helloMessage = return("Tamica");
-// console.log(helloMessage)
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
@@ -42,13 +38,13 @@ console.log(helloMessage);
  * console.
  */
 
-// var myName = "Simon Says"
-// sayHello(myName " is what they call me!")
-// console.log(myName);
-//
+var myName = "Simon Says"
+sayHello(myName + " is what they call me!");
+console.log(myName);
+
 // // Don't modify the following line, it generates a random number between 1 and 3
 // // and stores it in a variable named random
-// var random = Math.floor((Math.random() * 3) + 1);
+var random = Math.floor((Math.random() * 3) + 1);
 
 /**
  * TODO:
@@ -68,17 +64,17 @@ console.log(helloMessage);
  * number)
  */
 
-// function getRndInteger(min, max) {
-//     return Math.floor(Math.random() * (max - min + 1) ) + min;
-// }
-// function isTwo(random) {
-//     if (Math.random = 2) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
-// console.log(random);
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+function isTwo(random) {
+    if (Math.random = 2) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(random);
 
 /**
  * TODO:
@@ -91,6 +87,10 @@ console.log(helloMessage);
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
+function calculateTip(a, b) {
+    var result = a * b;
+    return result;      
+}
 
 /**
  * TODO:
