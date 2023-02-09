@@ -3,4 +3,48 @@ multi
 line
 comment
 */
+* {
+    font-family: Chalkboard;
+}
+body {
+    background-color: beige;
+    background-image: url("xxxx");
+}
+li {
+    list-style-type: disc;
+}
+.fancy-header{
+    color: red;
+    text-align: center;
+}
 
+h2{
+    color: aqua;
+    text-decoration:underline;
+  }
+table {
+    padding: 1em
+;
+}
+th {
+    font-size: larger;
+}
+tr,td,th {
+    border: purple;
+
+}
+a:link {
+    color: burlywood;
+}
+a:visited {
+    color: brown;
+}
+a:hover {
+    color: chartreuse;
+}
+a:active {
+    color: chocolate;
+}
+hr {
+    border-color: darkgreen;
+}
