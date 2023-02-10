@@ -72,7 +72,8 @@ font-weight: bold;
     padding-top: 4px;
     margin-bottom: .5em;
     margin-top: .5em;
-    calc
+    width: calc(100% - 1em);
+
     /* There must be 4px on top of the text and below the text of an input with this class */
     /* It should have a separation of .5em from elements on top of it and below it */
 
