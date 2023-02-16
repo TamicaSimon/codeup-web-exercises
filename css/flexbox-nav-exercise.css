@@ -1,0 +1,39 @@
+/*Remember that extra space can be created between flex items by setting margin to auto.
+
+The navbar must have the following:
+
+box-sizing: border-box for all elements - DONE
+link text, the logo, and icons are surrounded by anchor tags - DONE
+links turn blue on hover - DONE
+anchor tags are display: inline-block - DONE
+clickable area of links immediately flow from one link to the next (padding will help achieve this)- DONE
+Google Fonts used for logo and link text ("Montserrat" and "Work Sans", respectively)
+the "Logo" text is 3em with .2em of padding above and below
+no explicit height given to the navbar
+default styling is removed as needed from the body, unordered list and anchor tag elements
+logo is horizontally centered on the navbar (automatic margins will help achieve this) - DONE
+*/
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    box-sizing: border-box;
+
+}
+nav {
+    background-color: gray;
+    display: flex;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 1em;
+}
+nav a:hover {
+    background-color: blue;
+}
+nav h2 {
+    margin: auto;
+    font-size: 3em;
+}
