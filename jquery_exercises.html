@@ -5,12 +5,44 @@
     <title>J QUery Intro</title>
 </head>
 <body>
-
+<header>
+    <h1 id="main-header" class="heading">J Query Selectors</h1>
+</header>
+    <p id="first-paragraph" class="text">I am trying to learn this stuff before we move on to something even more difficult. So far, so good.</p>
+    <ul>
+        <li>BOM</li>
+        <li>DOM</li>
+        <li>JQuery</li>
+        <li>Selectors</li>
+    </ul>
+    <div>
+        <h2 id="second-header" class="subheading">ID and Class Selectors</h2>
+        <p id="second-paragraph" class="text">I can't wait until the day that this comes easily to me and I am not forced to look back at my notes or go to Google.</p>
+    </div>
 <script src="js/jquerypackage.js"></script>
 <script>
-    $(function() {
-        alert( 'The DOM has finished loading!' );
-    });
+    alert('The DOM has finished loading!');
+
+     var opening = $('#main-header').html();
+    alert(opening);
+
+
 </script>
 </body>
 </html>
+
+<!--Id Selectors
+TODO
+Create content in your HTML file using at least the following elements: h1, p, ul, li, div.
+
+Add several attributes to your elements; you will need both id and class attributes.
+
+Use jQuery to select an element by the id. Alert the contents of the element.
+
+Update the jQuery code to select and alert a different id.
+
+Use the same id on 2 elements. How does this change the jQuery selection?
+
+Remove the duplicate id. Each id should be unique on that page.
+
+Clas-->
