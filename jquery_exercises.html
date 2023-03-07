@@ -6,9 +6,9 @@
 </head>
 <body>
 <header>
-    <h1 id="main-header" class="heading">J Query Selectors</h1>
+    <h1 id="main-header" class="codeup">J Query Selectors</h1>
 </header>
-    <p id="first-paragraph" class="text">I am trying to learn this stuff before we move on to something even more difficult. So far, so good.</p>
+    <p id="first-paragraph" class="codeup">I am trying to learn this stuff before we move on to something even more difficult. So far, so good.</p>
     <ul>
         <li>BOM</li>
         <li>DOM</li>
@@ -16,8 +16,8 @@
         <li>Selectors</li>
     </ul>
     <div>
-        <h2 id="second-header" class="subheading">ID and Class Selectors</h2>
-        <p id="second-paragraph" class="text">I can't wait until the day that this comes easily to me and I am not forced to look back at my notes or go to Google.</p>
+        <h2 id="second-header" class="codeup">ID and Class Selectors</h2>
+        <p id="second-paragraph" class="codeup">I can't wait until the day that this comes easily to me and I am not forced to look back at my notes or go to Google.</p>
     </div>
 <script src="js/jquerypackage.js"></script>
 <script>
@@ -25,24 +25,32 @@
 
      var opening = $('#main-header').html();
     alert(opening);
+    $('.codeup').css('border', '1px solid red');
 
 
 </script>
 </body>
 </html>
+<!--Remove your custom jQuery code from previous exercises.
 
-<!--Id Selectors
-TODO
-Create content in your HTML file using at least the following elements: h1, p, ul, li, div.
+Update your code so that at least 3 different elements have the same class named codeup.
 
-Add several attributes to your elements; you will need both id and class attributes.
+Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
 
-Use jQuery to select an element by the id. Alert the contents of the element.
+Remove the class from one of the elements. Refresh and test that the border has been removed.
 
-Update the jQuery code to select and alert a different id.
+Give another element an id of codeup. Does this element get a border now?
 
-Use the same id on 2 elements. How does this change the jQuery selection?
+Elem-->
+<!--Remove your custom jQuery code from previous exercises.
 
-Remove the duplicate id. Each id should be unique on that page.
+Using jQuery, set the font-size of all li elements to 20px.
 
-Clas-->
+Craft selectors that highlight all the h1, p, and li elements.
+
+Create a jQuery statement to alert the contents of your h1 element(s).
+
+Multiple Selectors
+
+Combine your selectors that highlight all the h1, p, and li elements.
+-->
