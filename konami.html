@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+<p>Please type cheat code into this form:</p>
+  <input type="password" id="textfield" name="textfield" placeholder="Type Here"/>
+<audio class="sound1" src="https://audio.code.org/winpoint2.mp3" ></audio>
+
+<script src="/js/jquerypackage.js"></script>
+<script>
+  "use strict";
+  var cheatCode = '3838404037393739666513';
+  var userInput = "";
+  $(document).keyup(function(e){
+    console.log(e.keyCode);
+    userInput+= e.keyCode;
+    console.log(userInput);
+    if (userInput===cheatCode){
+      alert('You received 30 Lives!');
+      $('h1').css('color', 'royalblue');
+      $('.sound1').get(0).play();
+      $('body').css('background-color', 'purple');
+    }
+    });
+</script>
+</body>
+</html>
