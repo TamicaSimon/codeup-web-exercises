@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    #map {
+      /* the width and height may be set to any size */
+      /*width: 100vw;*/
+      /*height: 60vh;*/
+        border: 1px royalblue;
+        margin: lem;
+        border-radius: 100%;
+    }
+  </style>
+
 </head>
 <body>
-$END$
+    <h1><center>My Favorite Restaurant!</h1>
+
+
+<div id='map' style='width: 800px; height: 400px;'></div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoidGFtaWNhcyIsImEiOiJjbGYzMm5hMXowam40M3ZsaXF3YnhwNnp0In0.eAhxBzZF-TJjdoThioLEbg';
+  const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v12', // style URL
+    center: [-87.2913, 30.3501], // starting position NAS Pensacola, Florida
+    zoom: 15,
+  });
+    map.setZoom(10);
+    var marker = new mapboxgl.Marker()
+    .setLngLat([-87.2771, 30.3873])
+    .addTo(map);
+    /*var popup = new mapboxgl.Popup()*/
+    /*.setLngLat([-87.2771, 30.3873])//Cub's Crawfish*/
+    /*.setHTML("<p>Cub's Crawfish</p>")*/
+    /*.addTo(map);*/
+    /*var cubsPopup = new mapboxgl.Popup()*/
+    /*.setHTML("<p>Cub's Crawfish</p>")*/
+    /*marker.setPopup(cubsPopup)*/
+    const favoriteRestaurants = [
+    {
+        name: "Cub's Crawfish",
+        location: [-87.2771, 30.3873],
+        review: "The best crawfish in area",
+    },
+    {
+        name: "Joe Patti's Market and Restaurant",
+        location: [-87.2041, 30.4059],
+        review: "The best fresh seafood market with dock and restaurant attached",
+    },
+    {
+        name: "Shrimp Basket",
+        location: [-87.278170, 30.399650],
+        review: "The best blakcened poboys",
+    }
+    ];
+    favoriteRestaurants.forEach(restaurant => {
+        const marker = new mapboxgl . Marker()
+        .setLngLat(restaurant.location)
+        .addTo(map);
+        const popup = new mapboxgl.Popup()
+        .setHTML(`<p>${restaurant.name} - ${restaurant.review}</p>`);
+        marker.setPopup(popup);
+    });
+</script>
 </body>
 </html>

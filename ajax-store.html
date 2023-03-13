@@ -19,18 +19,27 @@
     <tbody id="insertProducts"></tbody>
 </table>
 
+<button id="">Refresh</button>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
 (function() {
     "use strict";
-    // TODO: Create an AJAX GET request for the file under data/inventory.json
 
-    // TODO: Take the data from inventory.json and append it to the products table
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
-})();
+    $.ajax("data/inventory.json"
+    ).done(function (data){
+        console.log("is it working?")
+    });
+    $.ajax("data/inventory.json").done(function (data){
+    var freeCake = "";
+    data.forEach(function (products) {
+        freeCake += '<tr><td>' + products.title + '</td>';
+        freeCake += '<tr><td>' + products.quantity + '</td>';
+        freeCake += '<tr><td>' + products.price + '</td>';
+        freeCake += '<tr><td>' + products.categories + '</td></tr>';
+    });
+    $('#insertProducts').append(freeCake)
+    })})();
 </script>
 
 </body>
