@@ -59,48 +59,44 @@
   </p>
 <!--</main>-->
 <footer id="footer">
-  <ul><h3>Everglades National Park</h3>
+  <ul><h3 id="parks-heading">Everglades National Park</h3>
     <li>Florida</li>
     <li>1.5 million acres</li>
     <li>Wetlands</li>
     <li>Home of endangered leatherback turtle</li>
   </ul>
-  <ul><h3>Death Valley</h3>
+  <ul><h3 id="parks-heading">Death Valley</h3>
     <li>California</li>
     <li>Closest to Las Vegas</li>
     <li>Largest National Park in contiguous United States</li>
     <li>Lowest point in North America at Badwater Basin</li>
   </ul>
-  <ul><h3>George Washington Memorial Parkway</h3>
+  <ul><h3 id="parks-heading">George Washington Memorial Parkway</h3>
     <li>Washington, D.C.</li>
     <li>Recreational Driving park Class</li>
     <li>Commemorates important parts of American history</li>
     <li>Most Visited</li>
   </ul>
 </footer>
-<a href="#" id="invisible">Click to toggle the highlighting of important text.</a>
-<!--<button id="change-background">Change Background</button>-->
+<a href="#" id="invisible">Click to toggle FAQ Responses</a>
+<button id="change-background">Change Background</button>
 <script src="js/jquerypackage.js"></script>
 <script>
   $( "dd" ).addClass("invisible");
   $("#invisible").click(function() {
     $('dd').toggleClass('invisible');
   });
-  // $(document).ready(function (){
-  //   $('#change-background').click(function() {
-  //     $('ul').each(function() {
-  //       $(this).children().last().css('background-color', 'yellow');
-  //     })
-  //   });
-  // $('#change-background').click(function (){
-  //   $("ul").each(function(){
-  //     $(this).children().last().css('background-color','yellow')
-  //   })
-  // })
-  // $('h3').click(function (){
-  //   $('li').
-  // }
+  $("#change-background").click(function (){
+    $('ul').each(function (){
+      $(this).children().last().css('background-color', 'yellow');
+    })
+  });
+  $("h3").click(function() {
+    $(this).nextAll("li").css("font-weight", "bold");
+  });
+  $("li").click(function() {
+    $(this).parent().children(":first-child").css("color", "blue");
+  });
 </script>
 </body>
 </html>
-
