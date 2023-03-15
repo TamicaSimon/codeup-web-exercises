@@ -32,9 +32,32 @@
     zoom: 15,
   });
     map.setZoom(10);
-    var marker = new mapboxgl.Marker()
-    .setLngLat([-87.2771, 30.3873])
-    .addTo(map);
+
+    //NAS Pensacola address to be used for geocoding
+  //   const pcolaAddress = {
+  //       address : '899 Moffett Road, Pensacola, Florida, USA',
+  //       popupHTML: "<p>Nas Pcola</p>"
+  //   };
+  //
+  //   // Use geocoding to get coordinates
+  //   const geocoder = new MapboxGeocoder({
+  //       accessToken: mapboxgl.accessToken,
+  //       marker: {
+  //           color: 'purple'
+  //       },
+  //       mapboxgl: mapboxgl
+  //
+  //   });
+  // function placeMarkerAndPopup(info, token, map) {
+  //     geocode(info.address, token).then(function(coordinates) {
+  //         var popup = new mapboxgl.Popup()
+  //             .setHTML(info.popupHTML);
+  //         var marker = new mapboxgl.Marker()
+  //       .setLngLat(coordinates)
+  //   // .setLngLat([-87.2771, 30.3873])
+  //   .addTo(map);
+  //   .setPopup(popup);
+  //   popup.addTo(map);
     /*var popup = new mapboxgl.Popup()*/
     /*.setLngLat([-87.2771, 30.3873])//Cub's Crawfish*/
     /*.setHTML("<p>Cub's Crawfish</p>")*/
@@ -56,9 +79,14 @@
     {
         name: "Shrimp Basket",
         location: [-87.278170, 30.399650],
-        review: "The best blakcened poboys",
+        review: "The best blackened poboys",
     }
     ];
+  // var imagesArray = [
+  //     { name: 'Crawfish Boil', image: 'Cubscrawfish.jpg' },
+  //     { name: 'Fish Market', image: 'Joepatti.jpg' },
+  //     { name: 'Seafood Platter', image: 'Shrimpbasket.jpg' }
+  // ];
     favoriteRestaurants.forEach(restaurant => {
         const marker = new mapboxgl . Marker()
         .setLngLat(restaurant.location)
@@ -70,3 +98,11 @@
 </script>
 </body>
 </html>
+
+<!--Info windows can contain basic HTML, not just plain text. Add some additional information about your restaurant to the popup such as why it is your favorite, dishes you like, images, etc.
+Add a select input that allows the user to change the zoom level to 5, 15, or 20.
+Add a text box for the user to enter an address that will use geocoding to center the map and place a marker on that location.
+Add a button that will hide all markers.
+Using this marker animation example as a starting point, animate a marker to bounce up and down. Alter the animation to stop after two seconds. Make the amount of bounce animation scale according to zoom level.
+Replace the generic marker icon with an image that is more appropriate for each restaurant. A tutorial for this can be found here.
+-->
