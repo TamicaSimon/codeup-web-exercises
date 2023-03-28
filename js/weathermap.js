@@ -1,63 +1,28 @@
-{function() {
-    "use strict";
-    mapboxgl.accessToken=mapboxKey,
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: "mapbox://styles/mapbox/streets-v12',
-        center: [-96.8,33.0],
-        zoom: 10,
+const clockEl = document.getElementById('clock');
+const calendarDateEl = document.getElementById('calendar-date');
+
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+setInterval(() => {
+    const time = new Date();
+    const currentMonth = time.getMonth();
+    const date = time.getDate();
+    const day = time.getDay();
+    const hour = time.getHours();
+    const hoursInMilitaryTime = hour >= 13 ? hour % 12 : hour;
+    const minutes = time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes();
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+
+    clockEl.innerHTML = hoursInMilitaryTime + ':' + minutes + ' ' + `<span id="am-pm">${ampm}</span>`;
+    calendarDateEl.innerHTML = days[day] + ', ' + date + ' ' + month[currentMonth];
+}, 1000);
+
+
+navigator.geolocation.getCurrentPosition((success) => {
+    let {latitude, longitude} = success.coords;
+
+    fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&appid=${API key}`).then(res => {
+        // handle response
     });
-    var marker= new mapboxgl.Marker({
-        draggable:true
-    })
-        .setLngLat([-96.8,33.0])
-        .addTo(map);
-
-    function onDragEnd() {
-        let lngLat = marker.getLngLat();
-        let arrWeather = [lngLat.lng, lngLat.lat];
-        console.log(lngLat);
-        weatherData(arrWeather)
-        // weatherForecast(arrWeather)
-    }
-    marker.on(`dragend`,onDragEnd);
-
-
-    function geoCodeBuildWeather(searchString) {
-        geocode(searchString, mapboxKey).then(function (results) {
-            weatherMarker.setLngLat(results);
-            map.flyTo({center: results, zoom: 9});
-            weatherData(results);
-            weatherForecast(results);
-        })
-    };
-    function weatherData(results) {
-        let html = "";
-        $.get(`https://api.openweathermap.org/data/2.5/weather?lat=${results[1]}&lon=${results[0]}&appid=${weatherKey}&units=imperial`).done(function (data) {
-            html += `<h6>Date: ${dateConversion(data.dt)}</h6>`;
-            html += `<h6>City: ${data.name}</h6>`;
-            html += `<h6>Weather: ${data.weather[0].description}</h6>`;
-            html += `<h6>Wind speed: ${parseInt(data.wind.speed)} knots</h6>`;
-            html += `<h6>Temp: ${parseInt(data.main.temp)} &deg;</h6>`;
-            html += `<h6>Humidity: ${parseInt(data.main.humidity)}</h6>`;
-            $("#currentCard").html(html);
-        })
-    };
-    $('#clicker').click(function (e){
-        e.preventDefault();
-        getLocation($('#locationInput').val());
-    })
-    let dateConversion = function(timeStamp) {
-        let date = new Date(timeStamp * 1000).toLocaleString("en-US", {
-            weekday: "short",
-            month: "short",
-            day: "numeric",
-        });
-        return date;
-    }
-    
-        
-})();
-
-    
-   
+});
