@@ -64,3 +64,14 @@ const allUserNames = users.reduce((names, user) => {
 
 console.log(allUserNames);
 
+const uniqueLanguages = users.reduce((languages, user) => {
+    user.languages.forEach(language => {
+        if (!languages.includes(language)) {
+            languages.push(language);
+        }
+    });
+    return languages;
+}, []);
+
+console.log(uniqueLanguages);
+
