@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Ajax Blog</title>
+    <script>
+        function loadBlog() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "data/blog.json", true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    var postsDiv = document.getElementById("posts");
+                    for (var i = 0; i < data.length; i++) {
+                        var post = data[i];
+                        var postDiv = document.createElement("div");
+                        postDiv.innerHTML = "<h2>" + post.title + "</h2><p>" + post.content + "</p><p>Categories: " + post.categories.join(", ") + "</p>";
+                        postsDiv.appendChild(postDiv);
+                    }
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body onload="loadBlog()">
+<div id="posts"></div>
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+</body>
+</html>
