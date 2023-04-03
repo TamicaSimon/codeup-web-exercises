@@ -42,3 +42,25 @@ console.log(usersThreeLanguages);
 const userEmails = users.map(user => user.email);
 
 console.log(userEmails);
+
+const totalYearsOfExperience = users.reduce((total, user) => {
+    return total + user.yearsOfExperience;
+}, 0);
+
+const averageYearsOfExperience = totalYearsOfExperience / users.length;
+
+console.log(totalYearsOfExperience);
+console.log(averageYearsOfExperience);
+
+const longestEmail = users.reduce((longest, user) => {
+    return user.email.length > longest.length ? user.email : longest;
+}, '');
+
+console.log(longestEmail);
+
+const allUserNames = users.reduce((names, user) => {
+    return names === '' ? user.name : names + ', ' + user.name;
+}, '');
+
+console.log(allUserNames);
+
